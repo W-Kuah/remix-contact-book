@@ -13,8 +13,13 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
-import { getContacts } from "./data"
+import { createEmptyContact, getContacts } from "./data"
 import appStylesHref from "./app.css";
+
+export const action = async () => {
+  const contact = await createEmptyContact();
+  return json({ contact });
+}
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
@@ -26,7 +31,7 @@ export const loader = async () => {
 };
 
 export default function App() {
-  const { contacts } = useLoaderData();
+  const { contacts } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -54,6 +59,32 @@ export default function App() {
             </Form>
           </div>
           <nav>
+            {contacts.length ? (
+              <ul>
+                {contacts.map((contact) => (
+                  <li key={contact.id}>
+                    <Link to={`contacts/${contact.id}`}>
+                      {contact.first || contact.last ? (
+                        <>
+                          {contact.first} {contact.last}
+                        </>
+                      ) : (
+                        <i>No Name</i>
+                      )}{" "}
+                      {contact.favorite ? (
+                        <span>*</span>
+                      ) : null}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>
+                <i>No contacts</i>
+              </p>
+            )}
+          </nav>
+          {/* <nav>
             <ul>
               <li>
                 <Link to={`/contacts/1`}>Your Name</Link>
@@ -62,7 +93,7 @@ export default function App() {
                 <Link to={`/contacts/2`}>Your Friend</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
         </div>
         <div id="detail">
           <Outlet />
