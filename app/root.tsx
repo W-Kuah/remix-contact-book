@@ -34,6 +34,7 @@ export const loader = async () => {
 export default function App() {
   const { contacts } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
+  
   return (
     <html lang="en">
       <head>
