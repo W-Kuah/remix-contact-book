@@ -6,6 +6,7 @@ import invariant from "tiny-invariant";
 import type { ContactRecord } from "../data";
 import { getContact } from "../data";
 
+
 export const loader = async ({ params, } : LoaderFunctionArgs) => {
     invariant(params.contactId, "Missing contactId param");
     const contact = await getContact(params.contactId);

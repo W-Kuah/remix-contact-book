@@ -1,6 +1,7 @@
 import type { LinksFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node"
 
+
 import {
   Form,
   Links,
@@ -13,6 +14,8 @@ import {
   useLoaderData,
   useNavigation,
 } from "@remix-run/react";
+
+import LogoTitle from '../assets/images/logo-s.png'
 
 import { createEmptyContact, getContacts } from "./data"
 import appStylesHref from "./app.css";
@@ -34,7 +37,7 @@ export const loader = async () => {
 export default function App() {
   const { contacts } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
-  
+
   return (
     <html lang="en">
       <head>
@@ -45,7 +48,7 @@ export default function App() {
       </head>
       <body>
         <div id="sidebar">
-          <h1>Remix Contacts</h1>
+          <h1><img id="sidebar-logo" src={LogoTitle}/> Warren's Contacts</h1>
           <div>
             <Form id="search-form" role="search">
               <input
