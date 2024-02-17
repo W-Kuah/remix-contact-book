@@ -1,6 +1,12 @@
-# Welcome to Remix!
+# Remix Tutorial Contact Book
 
-- [Remix Docs](https://remix.run/docs)
+Implemented a Contact Book app for exploring the Remix framework. Includes different functionalities like...
+- Creating contacts
+- Editing contacts
+- Deleting contacts
+- Favoriting contacts
+- SPA functionality
+- Loading UI
 
 ## Development
 
