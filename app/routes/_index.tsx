@@ -1,4 +1,4 @@
-import LogoTitle from '../../assets/images/logo-s.png'
+import LogoTitle from '../../assets/images/logo_sub.png';
 
 
 export default function Index() {

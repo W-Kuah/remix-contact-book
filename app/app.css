@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #8EF4FF;
+  --secondary-color: #022c43;
+  --sidebar-color: #181818;
+  --border-color: #4d4d4e;
+  --text-area-color: #115173;
+  --text-color: white;
+}
 
 html {
   box-sizing: border-box;
@@ -26,7 +34,8 @@ body {
   height: 100%;
   margin: 0;
   line-height: 1.5;
-  color: #121212;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 textarea,
 input,
@@ -37,12 +46,13 @@ button {
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
   box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-  background-color: white;
+  background-color: var(--text-area-color);
   line-height: 1.5;
   margin: 0;
+  color: var(--text-color);
 }
 button {
-  color: #3992ff;
+  color: var(--text-color);
   font-weight: 500;
 }
 
@@ -74,7 +84,7 @@ button:active {
   padding: 0;
 }
 #contact h1 form button[value="true"] {
-  color: #a4a4a4;
+  color: var(--text-color);
 }
 #contact h1 form button[value="true"]:hover,
 #contact h1 form button[value="false"] {
@@ -105,8 +115,8 @@ body {
 
 #sidebar {
   width: 22rem;
-  background-color: #f7f7f7;
-  border-right: solid 1px #e3e3e3;
+  /* background-color: var(--sidebar-color); */
+  border-right: solid 1px var(--border-color);
   display: flex;
   flex-direction: column;
 }
@@ -114,6 +124,7 @@ body {
 #sidebar > * {
   padding-left: 2rem;
   padding-right: 2rem;
+  background-color: var(--sidebar-color);
 }
 
 #sidebar h1 {
@@ -123,7 +134,7 @@ body {
   align-items: center;
   margin: 0;
   padding: 1rem 2rem;
-  border-top: 1px solid #e3e3e3;
+  border-top: 1px solid var(--border-color);
   order: 1;
   line-height: 1;
 }
@@ -135,7 +146,7 @@ body {
   gap: 0.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid ar(--border-color);
 }
 
 #sidebar > div form {
@@ -188,14 +199,14 @@ body {
 
 #sidebar nav a span {
   float: right;
-  color: #eeb004;
+  color: #ffd45d;
 }
 #sidebar nav a.active span {
   color: inherit;
 }
 
 i {
-  color: #818181;
+  color: var(--text-color);
 }
 #sidebar nav .active i {
   color: inherit;
@@ -227,12 +238,12 @@ i {
 }
 
 #sidebar nav a:hover {
-  background: #e3e3e3;
+  background: var(--secondary-color);
 }
 
 #sidebar nav a.active {
-  background: hsl(224, 98%, 58%);
-  color: white;
+  background: var(--primary-color);
+  color: var(--border-color);
 }
 
 #sidebar nav a.pending {
@@ -286,7 +297,7 @@ i {
 
 #contact h1:focus {
   outline: none;
-  color: hsl(224, 98%, 58%);
+  color: var(--primary-color);
 }
 
 #contact a[href*="twitter"] {
@@ -370,7 +381,7 @@ i {
 #index-page {
   margin: 2rem auto;
   text-align: center;
-  color: #818181;
+  color: var(--text-color);
 }
 
 #index-page a {
@@ -378,7 +389,7 @@ i {
 }
 
 #index-page a:hover {
-  color: #121212;
+  color: var(--primary-color);
 }
 
 #index-page:before {
